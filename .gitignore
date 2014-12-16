@@ -1,0 +1,17 @@
+data/processed_plink/*.gz
+data/bedfiles/*.bed
+data/bedfiles/*.fam
+data/bedfiles/*.bim
+data/bedfiles/*.nosex
+data/bedfiles/*.log
+data/bedfiles/*.eigenval
+data/bedfiles/*.eigenvec
+data/bedfiles/*.genome
+data/bedfiles/*.frq
+data/bedfiles/*.frqx
+data/raw/*.gz
+data/raw_imputed/*.gz
+data/raw_imputed/*.zip
+data/processed_plink/*.map
+data/processed_plink/*.ped
+logs/*.txt
