@@ -1,7 +1,7 @@
 Pedigree
 ========
 
-Here lives a version controlled repo of my attempt at building IBD based pedigrees of maize with fully phased imputed HapMap 2.7 GBS data from [Romay et al. 2013] (http://genomebiology.com/2013/14/6/R55). 
+Here lives a version controlled repo of my attempt at building IBD based pedigrees of maize with fully phased imputed HapMap 2.7 GBS data from [Romay et al. 2013] (http://genomebiology.com/2013/14/6/R55). Note, in all cases where I mention plink - I'm using plink 1.9 - and calling with module load plink/1.90 on FARM. To see [plink flag index - THERE ARE A LOT] (https://www.cog-genomics.org/plink2/index) as I did not define all the flags below.
 
 ### Workflow
 - Get the data: 
@@ -36,6 +36,15 @@ plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr10.plk --make-bed -
 plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr10.plk --merge-list allfiles.txt --make-bed --out bedmerged
 ```
 
+- Next you need to create an ibs/ibd "plink.genome" file - this is the file that is read into PRIMUS to construct relationships (some of these flags may be deprecated):
+
+```
+plink --bfile bedmerged --genome --genome-full --rel-check --min 0.05
+```
+
 - Use [PRIMUS] (https://primus.gs.washington.edu/primusweb/index.html) to build IBD pedigree with plink.genome file (not in repo too large - on FARM). Initial tests throw not an error - but "Unable to predict relationship from IBD estimates for xsample <-> ysample?"
+        - More ideas: investigate [LD pruning in plink] (http://pngu.mgh.harvard.edu/~purcell/plink/summary.shtml#prune), which appears to be important before running PRIMUS
+        
+
 
 - Try out [PREPARE?] (http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003610)
