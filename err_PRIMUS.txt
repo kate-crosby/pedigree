@@ -1,0 +1,6 @@
+Module BUILD 1.6 Loaded.
+Module slurm/2.6.5 loaded 
+Module plink/1.90 loaded 
+Unable to predict relationship from IBD estimates for 81FE7ABXX__Ab26A:81
+FE7ABXX:2:G1 <-> 81FE7ABXX__Ames2327:81FE7ABXX:3:E7: nan:nan:nan (IBD 0:1:2); Probability vector confidence too low (1.200749292817894222e-52 4.317522973353065375e-62 1.914791917072010616e-313 0.000000000000000000e+00 0.000000000000000000e+00 0.000000000000000000e+00). Try to get more accurate genome-wide IBD estimates (e.g. adjust for admixture or provide more accurate reference minor allele frequencies when calculating the IBD estimates)
+	...propagated at /home/kcrosby/bin/PRIMUS_v1.8.0/lib/perl_modules/PRIMUS/IMUS.pm line 729, <IN> line 2.
