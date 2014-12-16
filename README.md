@@ -13,6 +13,6 @@ wget http://www.panzea.org/dynamic/derivative_data/genotypes/AmesUSInbreds_AllZe
 
 - Use plink to merge all chromosomes into one file and create binary files. 
 
-- Use [PRIMUS] (https://primus.gs.washington.edu/primusweb/index.html) to build IBD pedigree with plink.genome file (not in repo too large - on FARM).
+- Use [PRIMUS] (https://primus.gs.washington.edu/primusweb/index.html) to build IBD pedigree with plink.genome file (not in repo too large - on FARM). Initial tests throw not an error - but "Unable to predict relationship from IBD estimates for xsample <-> ysample?"
 
 - Try out [PREPARE?] (http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003610)
