@@ -1,0 +1,27 @@
+PLINK v1.90b2n 64-bit (2 Nov 2014) 
+7 arguments: --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr10.plk --make-bed --merge-list allfiles.txt --out bedmerged
+Hostname: bigmem2
+Working directory: /home/kcrosby/pedigree/data/processed_plink
+Start time: Thu Dec 11 16:22:46 2014
+
+Random number seed: 1418343766
+516008 MB RAM detected; reserving 258004 MB for main workspace.
+Scanning .ped file... done.
+Performing single-pass .bed write (48139 variants, 4476 people).
+--file: bedmerged-temporary.bed + bedmerged-temporary.bim +
+bedmerged-temporary.fam written.
+Performing single-pass merge (4476 people, 681257 variants).
+Merged fileset written to bedmerged-merge.bed + bedmerged-merge.bim +
+bedmerged-merge.fam .
+681257 variants loaded from .bim file.
+4476 people (0 males, 0 females, 4476 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to bedmerged.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 0 founders and 4476 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.906713.
+681257 variants and 4476 people pass filters and QC.
+Note: No phenotypes present.
+--make-bed to bedmerged.bed + bedmerged.bim + bedmerged.fam ... done.
+
+End time: Thu Dec 11 16:33:23 2014
