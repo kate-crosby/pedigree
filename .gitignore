@@ -10,6 +10,8 @@ data/bedfiles/*.genome
 data/bedfiles/*.frq
 data/bedfiles/*.frqx
 data/raw/*.gz
-data/raw_imput/*.gz
+data/raw_imputed/*.gz
+data/raw_imputed/*.zip
 data/processed_plink/*.map
 data/processed_plink/*.ped
+logs/*.txt
