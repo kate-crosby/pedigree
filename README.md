@@ -16,26 +16,23 @@ do
         echo "$file: " $(run_pipeline.pl -Xmx15g -fork1 -h $file -export -exportType Plink -runfork1)
 done
 ```
+- Prior to converting to binary files the converted plink/map files were merged (all chromosomes included) in ped and map. This is because the data must be cleaned in this format and then converted to bed, bim and fam
 
-- Make binary plink files of each chromosome - plink did not like automation (so one per line), i.e. bed, fam, bim, no sex files
 ```
-plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr1.plk --make-bed --out Ameschr1
-plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr2.plk --make-bed --out Ameschr2
-plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr3.plk --make-bed --out Ameschr3
-plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr4.plk --make-bed --out Ameschr4
-plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr5.plk --make-bed --out Ameschr5
-plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr6.plk --make-bed --out Ameschr6
-plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr7.plk --make-bed --out Ameschr7
-plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr8.plk --make-bed --out Ameschr8
-plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr9.plk --make-bed --out Ameschr9
-plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr10.plk --make-bed --out Ameschr10
+plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr10.plk --merge-list allfiles.txt --recode --out pedmapmerged
 ```
 
-- Merge separate chromosome bed files into larger bed, fam, bim file - mergeplk.sh - located in data/bedmerged - note you must start with the first file - chrom. 10 in this case and use a white-spaced plain text of all the files (allfiles.txt or whatever) you want to do this to.
+- Now ready to clean the data and convert to binary format with cleanPCA.sh. The purpose of running this script is to filter the data according to missingness (remove any SNP that has 10% missing data, remove any individual genotype with 10% missing data and set minor allele frequency to 5%) and convert to binary format. Then run flashpca on output 'cleanedbed' files.
+
 ```
-plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr10.plk --merge-list allfiles.txt --make-bed --out bedmerged
+plink --file pedmapmerged --mind 0.1 --geno 0.1 --maf 0.05 --make-bed --out cleanedbed
 ```
 
+## Running flashPCA
+
+See this [repo]: (https://github.com/gabraham/flashpca)
+
+## Create the plink.genome file again but this time from the 'cleanedbed' files
 - Next you need to create an ibs/ibd "plink.genome" file - this is the file that is read into PRIMUS to construct relationships (some of these flags may be deprecated):
 
 ```
