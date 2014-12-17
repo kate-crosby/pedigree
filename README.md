@@ -36,9 +36,10 @@ See this [repo]: (https://github.com/gabraham/flashpca)
 - Next you need to create an ibs/ibd "plink.genome" file - this is the file that is read into PRIMUS to construct relationships (some of these flags may be deprecated):
 
 ```
-plink --bfile bedmerged --genome --genome-full --rel-check --min 0.05
+plink --bfile cleanedbed --genome --genome-full --rel-check --min 0.05
 ```
 
+## Pedigrees with PRIMUS v. 1.8.0
 - Use [PRIMUS] (https://primus.gs.washington.edu/primusweb/index.html) to build IBD pedigree with plink.genome file (not in repo too large - on FARM). Initial tests throw not an error - but "Unable to predict relationship from IBD estimates for xsample <-> ysample?"
         - More ideas: investigate [LD pruning in plink] (http://pngu.mgh.harvard.edu/~purcell/plink/summary.shtml#prune), which appears to be important before running PRIMUS
         
