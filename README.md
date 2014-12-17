@@ -27,10 +27,11 @@ plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr10.plk --merge-list
 ```
 plink --file pedmapmerged --mind 0.1 --geno 0.1 --maf 0.05 --make-bed --out cleanedbed
 ```
+- We had 4476 individuals to start with 681257 variants, and after running the above we have 3449 individuals and 575798 variants left with total genotyping rate in these samples being 0.948696
 
 ## Running flashPCA
 
-See this [repo]: (https://github.com/gabraham/flashpca)
+See this [repo](https://github.com/gabraham/flashpca). Appears that cleaning is super important to obtaining non-spurious results.
 
 ## Create the plink.genome file again but this time from the 'cleanedbed' files
 - Next you need to create an ibs/ibd "plink.genome" file - this is the file that is read into PRIMUS to construct relationships (some of these flags may be deprecated):
@@ -38,6 +39,7 @@ See this [repo]: (https://github.com/gabraham/flashpca)
 ```
 plink --bfile cleanedbed --genome --genome-full --rel-check --min 0.05
 ```
+Use this file 'plink.genome' with PRIMUS.
 
 ## Pedigrees with PRIMUS v. 1.8.0
 - Use [PRIMUS] (https://primus.gs.washington.edu/primusweb/index.html) to build IBD pedigree with plink.genome file (not in repo too large - on FARM). Initial tests throw not an error - but "Unable to predict relationship from IBD estimates for xsample <-> ysample?"
