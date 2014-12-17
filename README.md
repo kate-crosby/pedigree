@@ -1,5 +1,5 @@
-Pedigree
-========
+Pedigree: general worflow, questions, problems, observations
+============================================================
 
 Here lives a version controlled repo of my attempt at building IBD based pedigrees of maize with fully phased imputed HapMap 2.7 GBS data from [Romay et al. 2013] (http://genomebiology.com/2013/14/6/R55). Note, in all cases where I mention plink - I'm using plink 1.9 - and calling with module load plink/1.90 on FARM. To see [plink flag index - THERE ARE A LOT] (https://www.cog-genomics.org/plink2/index) as I did not define all the flags below.
 
