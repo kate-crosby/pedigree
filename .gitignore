@@ -21,3 +21,4 @@ data/processed_plink/*.fam
 data/processed_plink/*.nosex
 outputs/
 logs/*.txt
+outputs/
