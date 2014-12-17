@@ -15,4 +15,8 @@ data/raw_imputed/*.gz
 data/raw_imputed/*.zip
 data/processed_plink/*.map
 data/processed_plink/*.ped
+data/processed_plink/*.bed
+data/processed_plink/*.bim
+data/processed_plink/*.fam
+data/processed_plink/*.nosex
 logs/*.txt
