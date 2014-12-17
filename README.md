@@ -31,7 +31,12 @@ plink --file pedmapmerged --mind 0.1 --geno 0.1 --maf 0.05 --make-bed --out clea
 
 ## Running flashPCA
 
-See this [repo](https://github.com/gabraham/flashpca). Appears that cleaning is super important to obtaining non-spurious results.
+See this [repo](https://github.com/gabraham/flashpca). Appears that cleaning is super important to obtaining non-spurious results. Tried simple default - note, this file requires --ntasks = 4 on bigmemh FARM, fewer and job fails. Produced outfiles 'eigenvectors.txt' and 'eigenvalues.txt'. Attempted LD pruning - but without the --make-founders option, it doesn't do anything. **May have to come back and look at this later - and may require going all the way back to the map file, and using --cm flag.**
+
+```
+flashpca --bfile cleanedbed --numthreads 8
+```
+Import into R, with flashpcaR lib and plot.
 
 ## Create the plink.genome file again but this time from the 'cleanedbed' files
 - Next you need to create an ibs/ibd "plink.genome" file - this is the file that is read into PRIMUS to construct relationships (some of these flags may be deprecated):
