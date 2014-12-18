@@ -8,4 +8,5 @@ set -u
 set -o pipefail
 
 module load plink/1.90
-run_PRIMUS.pl --plink plink.genome
+
+run_PRIMUS.pl --plink plinkclean.genome
