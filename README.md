@@ -1,7 +1,7 @@
 Pedigree: general worflow, questions, problems, observations
 ============================================================
 
-Here lives a version controlled repo of my attempt at building IBD based pedigrees of maize with fully phased imputed HapMap 2.7 GBS data from [Romay et al. 2013] (http://genomebiology.com/2013/14/6/R55). Note, in all cases where I mention plink - I'm using plink 1.9 - and calling with module load plink/1.90 on FARM. To see [plink flag index - THERE ARE A LOT] (https://www.cog-genomics.org/plink2/index) as I did not define all the flags below.
+Here lives a version controlled repo of my attempt at building IBD based pedigrees of maize with fully phased imputed 2.7 GBS data from [Romay et al. 2013] (http://genomebiology.com/2013/14/6/R55). Note, in all cases where I mention plink - I'm using plink 1.9 - and calling with module load plink/1.90 on FARM. To see [plink flag index - THERE ARE A LOT] (https://www.cog-genomics.org/plink2/index) as I did not define all the flags below.
 
 ### Workflow
 - Get the data: 
@@ -27,7 +27,10 @@ plink --file AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr10.plk --merge-list
 ```
 plink --file pedmapmerged --mind 0.1 --geno 0.1 --maf 0.05 --make-bed --out cleanedbed
 ```
-- We had 4476 individuals to start with 681257 variants, and after running the above we have 3449 individuals and 575798 variants left with total genotyping rate in these samples being 0.948696
+- We had 4476 individuals to start with 681257 variants, and after running the above we have 3449 individuals and 575798 variants left with total genotyping rate in these samples being 0.948696. 
+
+## Running pairwise IBD with plink 1.9
+Running pairwise IBD on GBS 2.7 data is proving a tad difficult. JRI thinks it has something to do with minor allele frequency error in the GBS data and suggests going back to 55K SNP chip data (excluding teosinte TILs and BK lines). 
 
 ## Running flashPCA
 
