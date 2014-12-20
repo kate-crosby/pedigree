@@ -29,7 +29,7 @@ plink --file pedmapmerged --mind 0.1 --geno 0.1 --maf 0.05 --make-bed --out clea
 ```
 - We had 4476 individuals to start with 681257 variants, and after running the above we have 3449 individuals and 575798 variants left with total genotyping rate in these samples being 0.948696. 
 
-## Running pairwise IBD with plink 1.9
+## Running pairwise IBD with plink 1.9/Pedigrees with PRIMUS v. 1.8.0
 Running pairwise IBD on GBS 2.7 data is proving a tad difficult. JRI thinks it has something to do with minor allele frequency error in the GBS data being high and suggests going back to 55K SNP chip data (excluding teosinte TILs and BK lines). 
 **Update 1** went back to 55k SNP chip data (28 individuals excluding the TILs and BKN lines) ran through same protocol including PRIMUS (primus will do pairwise IBD by calling plink -see below. NB: it appears that allowing PRIMUS to call plink ixnays the "nans" for P(IBD) estimates earlier). Every pairwise IBD estimate in this set P(IBD=0) = 1.000 , P(IBD=1) = 0, P(IBD=2) = 0. Essentially - maximally unrelated or possibly garbage???... sigh. As a result no pedigrees/networks could be constructed. 
 
@@ -62,9 +62,6 @@ plink --bfile cleanedbed --genome --genome-full --rel-check --min 0.05
 ```
 Use this file 'plink.genome' with PRIMUS - or just use the cleanedbed file (above), and allow PRIMUS to call plink to perform pairwise IBD, while reconstructing pedigrees.
 
-## Pedigrees with PRIMUS v. 1.8.0
-- Use [PRIMUS] (https://primus.gs.washington.edu/primusweb/index.html) to build IBD pedigree with plink.genome file (not in repo too large - on FARM). Initial tests throw not an error - but "Unable to predict relationship from IBD estimates for xsample <-> ysample?"
-        - More ideas: investigate [LD pruning in plink] (http://pngu.mgh.harvard.edu/~purcell/plink/summary.shtml#prune), which appears to be important before running PRIMUS
         
 
 
