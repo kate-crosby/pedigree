@@ -20,6 +20,5 @@ data/processed_plink/*.bim
 data/processed_plink/*.fam
 data/processed_plink/*.nosex
 logs/*.txt
-outputs/
 data/hapmap55k/
 beagle/
