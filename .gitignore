@@ -19,7 +19,7 @@ data/processed_plink/*.bed
 data/processed_plink/*.bim
 data/processed_plink/*.fam
 data/processed_plink/*.nosex
-outputs/
 logs/*.txt
 outputs/
-data/snp55k
+data/hapmap55k/
+beagle/
