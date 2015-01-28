@@ -7,7 +7,7 @@ The issue with this initial list is that it contained over 30 GBS samples of B73
 java -jar beagle.r1398.jar gt=vcfSubsetBeagle.vcf.gz ibd=true ibdtrim=10 overlap=50 window=300 nthreads=4 ibdlod=0.1 out=out_subset_GBS_minLOD.gt
 ```
 
-Beagle appears to be ignoring many of these duplicates of B73. The next solution is to eliminate most of them or at least have the same number as Oh43 and Mo17. I have a suspicion that the B73 LODs are actually insanely high, or completely identical and as such are discarded - but I have emailed Browning to double check if this is a possibility as to how Beagle behaves. I am also just going to eliminate all but 4 B73 samples that have different naming conventions in the list and rerun Beagle again.
+Beagle appears to be ignoring many of these duplicates of B73. The next solution is to eliminate most of them or at least have the same number as Oh43 and Mo17. I have a suspicion that the B73 LODs are actually insanely high, or samples completely identical and as such are discarded - but I have emailed Browning to double check if this is a possibility as to how Beagle behaves. I am also just going to eliminate all but 4 B73 samples that have different naming conventions in the list and rerun Beagle again.
 
 
 
