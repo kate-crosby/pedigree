@@ -30,6 +30,7 @@ Copy the vcf to the Beagle dir, gzip, and run using same parameters as before.
 java -jar beagle.r1398.jar gt=vcfSubset_77Beagle.vcf.gz ibd=true ibdtrim=10 overlap=50 window=300 nthreads=4 out=out_subset_77GBS.gt
 ```
 
+All but confirmed that it is **statistical** problem of including many duplicates of B73. When lessened from n=30 to n=8 duplicates of B73 the number of IBD segments goes from 21 to 162. We suspect it is due to numbers of duplicates / frequency of hapblock occurrence where if there are 30/100 duplicates there is a 30% chance of randomly having a bunch of shared hapblocks with said duplicate (B73), thus Beagle probably calls this IBS and not IBD. **I will now eliminate all duplicates** (and their known aliases PIs or other accession numbers).
 
 
 
