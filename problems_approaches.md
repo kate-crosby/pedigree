@@ -15,7 +15,8 @@ Several challenges have presented themselves in using the pedigree approach to d
 
 
 ## Challenge Three: Transmission disequilibrium test - this is what Justin called it
-- This is more along the lines of what Graham Coop suggested in tracking reproductive success down the pedigree. In my view, the challenge would be to map a matrix of traits that are genotypically correlated to each other to particular SNPs or IBD haplotype segments - in my head it looks similar to the multivariate breeder's equation, but I haven't thought it through enough yet. 
+- This is more along the lines of what Graham Coop suggested in tracking reproductive success down the pedigree. In my view, the challenge would be to map a matrix of traits that are genotypically correlated to each other to particular SNPs or IBD haplotype segments - in my head it looks similar to the multivariate breeder's equation, but I haven't thought it through enough yet.
+**Addendum** This could also be a single locus scan - much more direct, but again not polygenic.
 
 $$\Delta z  = G\beta$$
 
