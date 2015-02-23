@@ -30,3 +30,13 @@ $$\Delta\omega * G^T = \beta$$
 
 Although one interesting prediction to test here is that the directional selection gradient ought to get shallower through time - as $N_e$ drops (due to alleles being chucked), and the genetic variance getting narrower through time, if selection is not relaxed. 
 
+## Challenge Four: Mini-pedigrees
+
+We can do allele dropping/TDT on lots of minipedigreses instead of one big one.  The problem arises when we have a minipedigree of size n=2. Based on relatedness we can likely identify things that are either parent/offspring or full-sib, and based on distribution of size of IBD blocks we may be able to distinguish between those two.  
+
+Let's say we have n=2 and know they are a parent-offpsring pair. We have no additional information (year etc.) to help us add direction. Is this useful?  Basically we have two outcomes at a locus:
+
+1. They share an allele.  I think this is uninteresting unless the unknown parent has ≥1 copy of the alternate allele (otherwise we can't rule out that both parents are homozygous for the favored allele, in which case we expect with probablity 1 that the offspring would get the allele).
+2. They don't share an alelle.  This is also uninteresting for the opposite reason. If favored allele is A, and the pair is AA and aa, then this could be an example of the A allele being succesfully passed down (if AA is offspring and unknown parent is AA or Aa) or of the allele not being passed down (if aa is offspring and unknown parent is aa or Aa).
+
+I think maybe we have to drop these?
