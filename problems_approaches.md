@@ -1,3 +1,6 @@
+---
+output: html_document
+---
 # New notes/approaches:
 
 Several challenges have presented themselves in using the pedigree approach to detect selection through time - I'll list these here, and also discuss present some possibilities for how to approach each challenge.
@@ -28,4 +31,12 @@ Since we can estimate $\Delta\omega$ down the pedigree from one generation to th
 $$\Delta\omega * G^T = \beta$$
 
 Although one interesting prediction to test here is that the directional selection gradient ought to get shallower through time - as $N_e$ drops (due to alleles being chucked), and the genetic variance getting narrower through time, if selection is not relaxed. 
+
+# Building on quant gen idea above
+
+Looking at $V_A$ down the pedigree on a per generational basis, where V_A is a function of allele frequencies across loci *L* (each of which drift stochastically in L-dimensional space but some are more correlated with each other due to LD):
+
+$$V_A = \overset{L}{\underset{l=1}{\sum}}\alpha^2_l2p_l(1-p_l)$$
+
+Here, $\alpha$ are the allelic effects which could be estimated from GWAS for a series of loci *L*. The idea is that you still get a considerable response to selection (almost certainly going to show up as $V_A$) in certain traits in spite of alleles being regularly chucked from the population. 
 
