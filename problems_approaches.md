@@ -1,3 +1,6 @@
+---
+output: pdf_document
+---
 # New notes/approaches:
 
 Several challenges have presented themselves in using the pedigree approach to detect selection through time - I'll list these here, and also discuss present some possibilities for how to approach each challenge.
@@ -30,13 +33,19 @@ $$\Delta\omega * G^T = \beta$$
 
 Although one interesting prediction to test here is that the directional selection gradient ought to get shallower through time - as $N_e$ drops (due to alleles being chucked), and the genetic variance getting narrower through time, if selection is not relaxed. 
 
-# More qnat. gen or pop gen (both really)
+# More quant. gen or pop gen (both really)
 
-Looking at $V_A$ down the pedigree on a per generational basis, where V_A is a function of allele frequencies across loci *L* (each of which drift stochastically in L-dimensional space but some are more correlated with each other due to LD):
+Looking at $V_A$ down the pedigree on a per generational basis, where $V_A$ is a function of allele frequencies across loci *L* (each of which drift stochastically in L-dimensional space but some are more correlated with each other due to LD - stolen from Coop's NOTES):
 
 $$V_A = \overset{L}{\underset{l=1}{\sum}}\alpha^2_l2p_l(1-p_l)$$
 
-Here, $\alpha$ are the allelic effects which could be estimated from GWAS for a series of loci *L* that affect any number of traits. The idea is that you still get a considerable response to selection (almost certainly going to show up as $V_A$) in certain traits in spite of alleles being regularly chucked (we think) from the population. 
+Here, $\alpha$ are the allelic effects which could be estimated from GWAS for a series of loci *L* that affect any number of traits. We expect decay in $V_A$ but I bet you won't see it. The idea is to explain why you still get a considerable response to selection (almost certainly going to show up as $V_A$) in most traits in spite of alleles being regularly chucked (we think) from the population (except alleles probably aren't being chucked very efficiently at all, due to the brilliance that is the design of Reciprocal recurrent selection experiments - see Agrawal 2006 for BOX 1 for simple explanation on how variance is maintained in the face of decreasing heterozygosity, with an example of linked loci). 
+
+**NOTE** $V_A$ is likely not really all $V_A$ were you to look down the pedigree (it's probably closer conceptually to "$V_I$"), as you're likely to get different SNPs and GWAS hits through time (changing genetic landscape per each reshuffling cycle of inbreeding in an RRS or RRS propagation - Tim does not like it when I say architecture). Nonetheless, at any given time step what we want to show is that $V_A$ actually stays overall quite high or consistent through time, and likely so does $N_e$ (or one type of $N_e$). $N_e$ could be estimated within a line, within a heterotic group, and among heterotic groups through time in a hierarchical manner (Whitlock 1999 - Qst Fst relationship).
+
+The other cool thing is that we could actually show that either the $\alpha$ s for a given trait or the $L$ s underlying a given trait change through time - but, $V_A$ and $N_e$ is still quite high overall, and or even add a mutational input term above to show that $V_A$ is increasing (that's kind of going a bit crazy - but we do have population mutation rates of TEs).
+
+
 
 
 =======
@@ -46,7 +55,7 @@ We can do allele dropping/TDT on lots of minipedigreses instead of one big one. 
 
 Let's say we have n=2 and know they are a parent-offpsring pair. We have no additional information (year etc.) to help us add direction. Is this useful?  Basically we have two outcomes at a locus:
 
-1. They share an allele.  I think this is uninteresting unless the unknown parent has ≥1 copy of the alternate allele (otherwise we can't rule out that both parents are homozygous for the favored allele, in which case we expect with probablity 1 that the offspring would get the allele).
+1. They share an allele.  I think this is uninteresting unless the unknown parent has $>$ 1 copy of the alternate allele (otherwise we can't rule out that both parents are homozygous for the favored allele, in which case we expect with probablity 1 that the offspring would get the allele).
 2. They don't share an alelle.  This is also uninteresting for the opposite reason. If favored allele is A, and the pair is AA and aa, then this could be an example of the A allele being succesfully passed down (if AA is offspring and unknown parent is AA or Aa) or of the allele not being passed down (if aa is offspring and unknown parent is aa or Aa).
 
 I think maybe we have to drop these?
