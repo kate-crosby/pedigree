@@ -1,6 +1,3 @@
----
-output: html_document
----
 # New notes/approaches:
 
 Several challenges have presented themselves in using the pedigree approach to detect selection through time - I'll list these here, and also discuss present some possibilities for how to approach each challenge.
@@ -41,8 +38,6 @@ $$V_A = \overset{L}{\underset{l=1}{\sum}}\alpha^2_l2p_l(1-p_l)$$
 
 Here, $\alpha$ are the allelic effects which could be estimated from GWAS for a series of loci *L* that affect any number of traits. The idea is that you still get a considerable response to selection (almost certainly going to show up as $V_A$) in certain traits in spite of alleles being regularly chucked (we think) from the population. 
 
-<<<<<<< HEAD
-
 
 =======
 ## Challenge Four: Mini-pedigrees
@@ -55,4 +50,4 @@ Let's say we have n=2 and know they are a parent-offpsring pair. We have no addi
 2. They don't share an alelle.  This is also uninteresting for the opposite reason. If favored allele is A, and the pair is AA and aa, then this could be an example of the A allele being succesfully passed down (if AA is offspring and unknown parent is AA or Aa) or of the allele not being passed down (if aa is offspring and unknown parent is aa or Aa).
 
 I think maybe we have to drop these?
->>>>>>> 1ac7add1d339558a7f3cc9809890e320f9846e11
+
